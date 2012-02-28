@@ -10,7 +10,7 @@ SQL Query Logging
 
 If you want to use the SQL logging functionality you need to add the following to the bottom of your config.php:
 
-```
+```php
 if (file_exists(dirname(__FILE__) . '/XenDebug/Db/Mysqli.php'))
 {
 	$config['db']['adapterNamespace'] = 'XenDebug';
@@ -45,7 +45,7 @@ Usage
 
 To log your own messages simply use the following PHP method call
 
-```
+```php
 XenDebug_Log::getInstance()->log(MESSAGE, TYPE, LEVEL);
 ```
 
