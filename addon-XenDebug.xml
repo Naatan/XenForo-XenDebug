@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<addon addon_id="XenDebug" title="XenDebug" version_string="0.1" version_id="0" url="" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <code_events/>
+  <code_event_listeners>
+    <listener event_id="load_class_model" execute_order="10" callback_class="XenDebug_Listen" callback_method="load_class_model" active="1" description=""/>
+  </code_event_listeners>
+  <cron/>
+  <email_templates/>
+  <optiongroups>
+    <group group_id="XenDebug" display_order="100" debug_only="1"/>
+    <option option_id="xenDebugLevel" edit_format="textbox" data_type="integer" can_backup="1">
+      <default_value>10</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="20"/>
+    </option>
+    <option option_id="xenDebugLogClass" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value>XenDebug_Log_File</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="40"/>
+    </option>
+    <option option_id="xenDebugLogCodeEvents" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="200"/>
+    </option>
+    <option option_id="xenDebugLogCodeEventsTypes" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value>container_admin_params
+container_public_params
+controller_pre_dispatch
+criteria_page
+criteria_user
+file_health_check
+front_controller_post_view
+front_controller_pre_dispatch
+front_controller_pre_route
+front_controller_pre_view
+init_dependencies
+load_class_bb_code
+load_class_controller
+load_class_datawriter
+load_class_importer
+load_class_mail
+load_class_model
+load_class_route_prefix
+load_class_search_data
+load_class_view
+navigation_tabs
+option_captcha_render
+search_source_create
+template_create
+template_hook
+template_post_render
+visitor_setup</default_value>
+      <edit_format_params>rows=6</edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="210"/>
+    </option>
+    <option option_id="XenDebugLogDebug" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="10"/>
+    </option>
+    <option option_id="xenDebugLogExceptions" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="1"/>
+    </option>
+    <option option_id="xenDebugLogHttp" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="100"/>
+    </option>
+    <option option_id="xenDebugLogHttpMessage" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value>{HTTPS} {REQUEST_METHOD} REQUEST: {REQUEST_URI}</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="110"/>
+    </option>
+    <option option_id="xenDebugLogSQL" edit_format="onoff" data_type="boolean" can_backup="1">
+      <default_value></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="300"/>
+    </option>
+    <option option_id="xenDebugLogSQLTypes" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value>SELECT, UPDATE, INSERT, DELETE, REPLACE</default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="XenDebug" display_order="310"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="option_group_XenDebug" version_id="0" version_string="0.1"><![CDATA[XenDebug]]></phrase>
+    <phrase title="option_group_XenDebug_description" version_id="0" version_string="0.1"><![CDATA[]]></phrase>
+    <phrase title="option_xenDebugLevel" version_id="0" version_string="0.1"><![CDATA[Log level treshold]]></phrase>
+    <phrase title="option_xenDebugLevel_explain" version_id="0" version_string="0.1"><![CDATA[Any debug messages above the number given will not be logged]]></phrase>
+    <phrase title="option_xenDebugLogClass" version_id="0" version_string="0.1"><![CDATA[Logging Class]]></phrase>
+    <phrase title="option_xenDebugLogClass_explain" version_id="0" version_string="0.1"><![CDATA[If you want to use your own logging class enter it's name here. This class should extend XenDebug_Log_Abstract.<br/><br/>
+XenDebug comes with the following logging classes:<br/><br/>
+- XenDebug_Log_File - logs messages to %TMP%/xendebug.log<br/>
+- XenDebug_Log_ChromePhp - logs messages with ChromePHP]]></phrase>
+    <phrase title="option_xenDebugLogCodeEvents" version_id="0" version_string="0.1"><![CDATA[Log Code Events]]></phrase>
+    <phrase title="option_xenDebugLogCodeEventsTypes" version_id="0" version_string="0.1"><![CDATA[Code Events to log]]></phrase>
+    <phrase title="option_xenDebugLogCodeEventsTypes_explain" version_id="0" version_string="0.1"><![CDATA[Enter list of events to log]]></phrase>
+    <phrase title="option_xenDebugLogCodeEvents_explain" version_id="0" version_string="0.1"><![CDATA[]]></phrase>
+    <phrase title="option_XenDebugLogDebug" version_id="0" version_string="0.1"><![CDATA[Log Debug Messages]]></phrase>
+    <phrase title="option_XenDebugLogDebug_explain" version_id="0" version_string="0.1"><![CDATA[]]></phrase>
+    <phrase title="option_xenDebugLogExceptions" version_id="0" version_string="0.1"><![CDATA[Log Exceptions]]></phrase>
+    <phrase title="option_xenDebugLogExceptions_explain" version_id="0" version_string="0.1"><![CDATA[]]></phrase>
+    <phrase title="option_xenDebugLogHttp" version_id="0" version_string="0.1"><![CDATA[Log incoming HTTP requests]]></phrase>
+    <phrase title="option_xenDebugLogHttpMessage" version_id="0" version_string="0.1"><![CDATA[Message for incoming HTTP requests]]></phrase>
+    <phrase title="option_xenDebugLogHttpMessage_explain" version_id="0" version_string="0.1"><![CDATA[You can use any of the array keys for php's global <a href="http://php.net/manual/en/reserved.variables.server.php" target="_BLANK">$_SERVER</a> variable]]></phrase>
+    <phrase title="option_xenDebugLogHttp_explain" version_id="0" version_string="0.1"><![CDATA[]]></phrase>
+    <phrase title="option_xenDebugLogSQL" version_id="0" version_string="0.1"><![CDATA[Log SQL Queries]]></phrase>
+    <phrase title="option_xenDebugLogSQLTypes" version_id="0" version_string="0.1"><![CDATA[SQL Query types to log]]></phrase>
+    <phrase title="option_xenDebugLogSQLTypes_explain" version_id="0" version_string="0.1"><![CDATA[Possible values: SELECT, UPDATE, INSERT, DELETE, REPLACE, ALL]]></phrase>
+    <phrase title="option_xenDebugLogSQL_explain" version_id="0" version_string="0.1"><![CDATA[]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates/>
+  <bb_code_media_sites/>
+</addon>
