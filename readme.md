@@ -10,9 +10,9 @@ The logging class itself is extendable so you can easily create a custom logging
 Screenshots
 ===========
 
-![Debugging Configuration](http://cl.ly/1E1p3j0b0W0n3x3t1e2B/Screen%20shot%202012-02-28%20at%201.12.28%20PM.png)
-![Debugging with ChromePHP](http://cl.ly/272x2y0g3g210x3m223L/Screen%20shot%202012-02-28%20at%201.12.07%20PM.png)
-![Debugging with Terminal](http://cl.ly/372d2M2o1p2G3D2f2n40/Screen%20shot%202012-02-28%20at%201.15.09%20PM.png)
+[![Debugging Configuration](http://thumbs.cl.ly/1E1p3j0b0W0n3x3t1e2B)](http://cl.ly/1E1p3j0b0W0n3x3t1e2B)
+[![Debugging with ChromePHP](http://thumbs.cl.ly/272x2y0g3g210x3m223L)](http://cl.ly/272x2y0g3g210x3m223L)
+[![Debugging with Terminal](http://thumbs.cl.ly/372d2M2o1p2G3D2f2n40)](http://cl.ly/372d2M2o1p2G3D2f2n40)
 
 Installation
 ============
