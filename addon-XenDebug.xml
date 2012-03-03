@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<addon addon_id="XenDebug" title="XenDebug" version_string="0.1" version_id="0" url="" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+<addon addon_id="XenDebug" title="XenDebug" version_string="0.1.1" version_id="1" url="" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
   <admin_navigation/>
   <admin_permissions/>
   <admin_style_properties/>
@@ -11,7 +11,7 @@
   <cron/>
   <email_templates/>
   <optiongroups>
-    <group group_id="XenDebug" display_order="100" debug_only="1"/>
+    <group group_id="XenDebug" display_order="5000" debug_only="1"/>
     <option option_id="xenDebugLevel" edit_format="textbox" data_type="integer" can_backup="1">
       <default_value>10</default_value>
       <edit_format_params></edit_format_params>
@@ -135,4 +135,5 @@ XenDebug comes with the following logging classes:<br/><br/>
   <style_properties/>
   <templates/>
   <bb_code_media_sites/>
+  <template_modifications/>
 </addon>
