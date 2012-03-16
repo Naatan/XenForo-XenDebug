@@ -12,6 +12,11 @@ class XenDebug_Log_ChromePhp extends XenDebug_Log_Abstract
 		{
 			return;
 		}
+		
+		if (headers_sent())
+		{
+			return;
+		}
 
 		$message = $this->formatMessage($message, $type);
 
