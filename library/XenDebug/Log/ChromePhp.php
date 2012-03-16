@@ -6,7 +6,7 @@ class XenDebug_Log_ChromePhp extends XenDebug_Log_Abstract
 	protected static $_logSize = 0;
 	protected static $_logSizeWarned = false;
 
-	public function log($message, $type = XenDebug_Log::TYPE_DEBUG, $level = 3)
+	public function log($message, $type = self::TYPE_DEBUG, $level = 3)
 	{
 		if ($level > $this->options->xenDebugLevel)
 		{
