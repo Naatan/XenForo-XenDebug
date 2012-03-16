@@ -20,6 +20,12 @@ class XenDebug_Log
 		{
 			self::$instance = false;
 			$class = XenForo_Application::get('options')->xenDebugLogClass;
+			
+			if ( ! class_exists($class, true))
+			{
+				$class = 'XenDebug_Log_File';
+			}
+			
 			self::$instance = new $class;
 		}
 
