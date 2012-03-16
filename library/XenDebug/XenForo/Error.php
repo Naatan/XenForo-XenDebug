@@ -27,10 +27,10 @@ abstract class XenForo_Error extends XenForo_Error_Abstract
 	{
 		if ($log = XenDebug_Log::getInstance())
 		{
-			$log->logDebugMessage($message);
+			$log->logDebugMessage(call_user_func_array('sprintf', func_get_args()));
 		}
 
-		parent::debug($message);
+		call_user_func_array(array('parent','debug'), func_get_args());
 	}
 
 }
