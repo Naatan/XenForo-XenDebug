@@ -112,18 +112,23 @@ abstract class XenDebug_Log_Abstract
 			}
 		}
 
-        if (!is_array($bind)) {
-            $bind = array($bind);
-        }
+		if ( ! is_array($bind)) {
+		    $bind = array($bind);
+		}
 
-		if (count($bind) > 0)
+		if ($sql AND count($bind) > 0)
 		{
 			$f = create_function('$v', 'return "\'".addslashes((string)$v)."\'";');
 			$bind = array_map($f, $bind);
 
 			$sql = str_replace('?', '%s', $sql);
 
-			$sql = vsprintf($sql, $bind);
+			try {
+				$sql = vsprintf($sql, $bind);
+			} catch (Exception $e)
+			{
+				$sql .= "\n-- Could not parse params: " . json_encode($bind);
+			}
 		}
 
 		$this->log($sql, XenDebug_Log::TYPE_QUERY);	
