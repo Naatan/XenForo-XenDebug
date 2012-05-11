@@ -14,7 +14,7 @@ abstract class XenDebug_Listen
 
 		self::$_checked = true;
 
-		if ( ! XenForo_Application::debugMode() OR strpos($_SERVER['REQUEST_URI'],'admindav'))
+		if ( ! XenForo_Application::debugMode() OR (substr(PHP_SAPI, 0, 3) != 'cli' AND strpos($_SERVER['REQUEST_URI'],'admindav')))
 		{
 			return;
 		}
