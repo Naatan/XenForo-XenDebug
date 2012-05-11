@@ -6,7 +6,7 @@ class XenDebug_Log_ChromePhp extends XenDebug_Log_Abstract
 	protected static $_logSize = 0;
 	protected static $_logSizeWarned = false;
 
-	public function log($message, $type = XenDebug_Log::TYPE_DEBUG, $level = 3)
+	public function log($message, $type = self::TYPE_DEBUG, $level = 3)
 	{
 		if ($level > $this->options->xenDebugLevel)
 		{
@@ -190,8 +190,17 @@ class ChromePhp
 	private function __construct()
 	{
 		$this->_php_version = phpversion();
-		$this->_timestamp = $this->_php_version >= 5.1 ? $_SERVER['REQUEST_TIME'] : time();
-		$this->_json['request_uri'] = $_SERVER['REQUEST_URI'];
+		
+		if (substr(PHP_SAPI, 0, 3) != 'cli')
+		{
+			$this->_timestamp = $this->_php_version >= 5.1 ? $_SERVER['REQUEST_TIME'] : time();
+			$this->_json['request_uri'] = $_SERVER['REQUEST_URI'];
+		}
+		else
+		{
+			$this->_timestamp = time();
+			$this->_json['request_uri'] = '';
+		}
 	}
 
 	/**
